@@ -1,0 +1,115 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        .admin-panel {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #1e293b;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            border: 3px solid #3b82f6;
+        }
+
+        .profile h2 {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 15px 0;
+        }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        nav ul li a:hover {
+            background-color: #334155;
+            color: #fff;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 40px;
+            background-color: #f8fafc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-panel">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="https://i.pravatar.cc/100?img=12" alt="Admin Fotoğrafı">
+                <h2>Admin</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Kategoriler</a></li>
+                    <li><a href="#">Ürünler</a></li>
+                    <li><a href="#">Ürün Fotoğrafları</a></li>
+                    <li><a href="#">Öne Çıkanlar</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            @RenderBody()
+            <footer>
+                © 2025 Berkay Genceroğlu
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
